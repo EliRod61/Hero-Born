@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemRotation : MonoBehaviour
@@ -16,6 +17,7 @@ public class ItemRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Should always multiply your movement or rotation speeds by Time.deltaTime
+        itemTransform.Rotate(RotationSpeed * Time.deltaTime, 0, 0);
     }
 }
