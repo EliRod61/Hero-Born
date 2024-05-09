@@ -30,15 +30,12 @@ public class PlayerBehavior : MonoBehaviour
     }
     void FixedUpdate()
     {
-        // 2
         Vector3 rotation = Vector3.up * _hInput;
-        // 3
-        Quaternion angleRot = Quaternion.Euler(rotation *
-        Time.fixedDeltaTime);
-        // 4
-        _rb.MovePosition(this.transform.position +
-        this.transform.forward * _vInput * Time.fixedDeltaTime);
-        // 5
+
+        Quaternion angleRot = Quaternion.Euler(rotation * Time.fixedDeltaTime);
+
+        _rb.MovePosition(this.transform.position + this.transform.forward * _vInput * Time.fixedDeltaTime);
+
         _rb.MoveRotation(_rb.rotation * angleRot);
     }
 }
